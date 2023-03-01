@@ -11,6 +11,13 @@ const connectToServer = () => {
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
+  // register a handler for the connect event
+  conn.on("connect", () => {
+    console.log("Successfully Connected To Server");
+    // set a username and send to the server to start the game
+    conn.write("Name: AFG");
+  });
+
   // handling data received from server
   conn.on("data", (data) => {
     console.log(data);
@@ -19,7 +26,7 @@ const connectToServer = () => {
   return conn;
 };
 
-console.log('Connecting...')
+console.log('Connecting...');
 connectToServer();
 
 
