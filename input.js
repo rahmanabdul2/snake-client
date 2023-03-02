@@ -1,5 +1,5 @@
 // input module which will focus on managing the user input
-const { moveDownKey, moveLeftKey, moveUpKey, moveRightKey } = require('./constants');
+const { moveDownKey, moveLeftKey, moveUpKey, moveRightKey, message } = require('./constants');
 
 //stores the current TCP connection
 let connection;
@@ -23,6 +23,8 @@ const setupInput = function(conn) {
       conn.write('Move: down');
     } else if (key === moveRightKey) {
       conn.write('Move: right');
+    } else if (key === message[key]) {
+      conn.write(message[key]);
     }
   };
   stdin.on('data', (data) => {

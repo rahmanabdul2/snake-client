@@ -8,6 +8,10 @@ const moveUpKey = 'w';
 const moveDownKey = 's';
 const moveLeftKey = 'a';
 const moveRightKey = 'd';
+const message = {
+  l: 'Hi, nice to meet you',
+  m: 'You will lose LOL'
+};
 
 
 
@@ -20,4 +24,5 @@ module.exports = {
   moveLeftKey,
   moveUpKey,
   moveRightKey,
+  message
 };
